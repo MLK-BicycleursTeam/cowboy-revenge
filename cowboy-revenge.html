@@ -2,13 +2,16 @@
   <title>cowboy-revenge</title>
 </head>
 
-<body>
-  <h1>Welcome to Meteor!</h1>
+<template name="canvas_par_defaut">
+  <a href="{{pathFor route='bienvenue' }}">home</a>
+  {{> entryAccountButtons }}
+  {{> yield }}
+</template>
 
-  {{> hello}}
-</body>
+<template name="bienvenue">
+  <h1>bienvenue a la maison</h1>
+</template>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="poney">
+  <h1>bienvenue poney !!!</h1>
 </template>

@@ -1,19 +1,22 @@
+
+
+Router.configure({
+  layoutTemplate: 'canvas_par_defaut'
+});
+
+Router.route('/', {name: 'bienvenue'});
+
+Router.route('/poney', {name: 'poney'});
+
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
-    }
+  Accounts.ui.config({ });
+
+  AccountsEntry.config({
+    homeRoute: '/',
+    dashboardRoute: '/'
   });
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
 }
 
 if (Meteor.isServer) {
@@ -22,3 +25,4 @@ if (Meteor.isServer) {
     console.log('server started');
   });
 }
+
